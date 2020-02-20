@@ -14,9 +14,9 @@ function App() {
         setMovieGenres(genres);
         
       });
-      
+      console.log('Hello')
   }, []); // <-- Have to pass in [] here!
-
+  
   return (
     
     <div>
