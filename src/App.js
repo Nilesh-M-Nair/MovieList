@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import UrlSet from './component/UrlSet'
+import Home from './pages/Home'
 
-function App() { 
-
+function App() {
   return (
-    
     <div>
-      <UrlSet />
+      <Home />
     </div>
   );
 }

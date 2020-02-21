@@ -1,34 +1,27 @@
+import React from 'react';
+import User from './User';
 
 
+function UrlSet() {
+  const [movieID, setMovieID] = React.useState([]);
 
-
-
-/*import React from 'react';
-import './App.css';
-import User from './component/User.component';
-
-function UrlFilter() {
-
-  const useFetch = url => {
-    const [data, setData] = useState([]);
-
-  }
-
-    React.useEffect(() => {
-    const response =  fetch(url);
-    const data =  response.json();
-    const [item] = data.results;
-    setData(item);
-      }, []);
-
-      const {url,setUrl} = useFetch(this.props.url)
+  React.useEffect(() => {
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=7aecf10a1be54c901c7f16fb48b23cc8&language=en-US&page=1')
+      .then(results=> results.json())
+      .then(data => {
+       const {results} = data;
+       setMovieID(results);
+        
+      });
+ 
+  }, []); // <-- Have to pass in [] here!
+  console.log(movieID)
   return (
     
     <div>
-      <User name = {setData}/>
+      <User name = {movieID}/>
     </div>
   );
 }
-
-export default UrlFilter;
-*/
+//
+export default UrlSet;

@@ -1,19 +1,15 @@
-
-/*import React from 'react';
-import User from '../component/User.component'
-
-
+import React from 'react';
+import UrlSet from '../component/UrlSet';
+import Header from '../component/Header';
 
 function Home(){
 
     return(
     <div>
-        <User name = {this.this.props.} />
+        <Header />
+        <UrlSet />
     </div>
     );
-    
-
 }
 
 export default Home;
-*/
