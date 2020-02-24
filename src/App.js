@@ -1,14 +1,24 @@
 import React from 'react';
 import './App.css';
-import UrlSet from './component/UrlSet'
+import Home from './pages/Home'
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Overview from './pages/Overview'
 
-function App() { 
-
+function App() {
   return (
-    
     <div>
-      <UrlSet />
+      <Router>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/home' component={Home} />
+        <Route path='/overview/:id' component={Overview} />
+        <Switch>
+        </Switch>
+      </Switch>
+      </Router>
+      
     </div>
+      
   );
 }
 
