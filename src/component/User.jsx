@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Button } from 'antd';
-import {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class User extends React.Component {
     
@@ -117,8 +117,10 @@ class User extends React.Component {
         dataIndex: 'id',
         key: 'id',
         ellipsis: true,
-        render: (id) => <Router><Switch><Route><div><Link to= {`/./pages/Overview${id}`}>{id}</Link></div></Route></Switch></Router>
-       
+        render: (id) => 
+          <div>
+            <Link to= {`/overview/${id}`}>{'Click here'}</Link>
+          </div>
       },
     ];
       return (
@@ -129,7 +131,7 @@ class User extends React.Component {
             <Button onClick={this.clearAll}>Clear filters and sorters</Button>
           </div>
           <Table columns={columns} dataSource={this.props.name} onChange={this.handleChange} rowKey={(row) => `${row.id}${row.name}`}/>
-          
+      
         </div>
       );
     }

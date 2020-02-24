@@ -1,13 +1,15 @@
 import React from 'react';
 import UrlSet from '../component/UrlSet';
-import Header from '../component/Header';
+import Head from '../component/Header';
+import Foot from '../component/Footer';
 
 function Home(){
 
     return(
     <div>
-        <Header />
+        <Head />
         <UrlSet />
+        <Foot />
     </div>
     );
 }
